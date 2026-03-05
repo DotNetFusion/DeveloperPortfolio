@@ -26,7 +26,7 @@ export class PortfolioService {
   private skills: Skill[] = [
     {
       category: 'Programming',
-      skills: ['C#', 'TypeScript', 'JavaScript']
+      skills: ['C#', 'TypeScript', 'JavaScript','Java','C','C++']
     },
     {
       category: 'Backend',
@@ -42,7 +42,7 @@ export class PortfolioService {
     },
     {
       category: 'Cloud',
-      skills: ['Microsoft Azure', 'Azure App Services']
+      skills: ['Microsoft Azure', 'Azure App Services','DevOps']
     },
     {
       category: 'Mobile',

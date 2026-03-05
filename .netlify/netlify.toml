@@ -1,0 +1,45 @@
+redirectsOrigin = "config"
+headers = []
+
+[functions]
+
+[functions."*"]
+
+[[plugins]]
+origin = "default"
+package = "@netlify/angular-runtime"
+
+[plugins.inputs]
+
+[build]
+publish = "C:\\Users\\vikra\\source\\Shiva_Projects\\DeveloperPortfolio\\dist\\DeveloperProfile\\browser"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npm run build"
+ignore = "git diff --quiet HEAD^ HEAD -- ."
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]

@@ -1,0 +1,43 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo">
+      <span class="logo-text">Shiva</span>
+      <span class="logo-accent">.</span>
+    </div>
+
+    <button
+      class="mobile-menu-btn"
+      (click)="toggleMobileMenu()"
+      [attr.aria-label]="mobileMenuOpen ? 'Close menu' : 'Open menu'"
+      [attr.aria-expanded]="mobileMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul
+      class="navbar-links"
+      [class.active]="mobileMenuOpen"
+      (click)="closeMobileMenu()">
+      <li *ngFor="let link of navLinks">
+        <button
+          class="nav-link"
+          (click)="navigateTo(link.id)">
+          {{ link.label }}
+        </button>
+      </li>
+    </ul>
+
+    <div class="navbar-socials">
+      <a
+        *ngFor="let social of socialLinks"
+        [href]="social.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+        [attr.aria-label]="social.label">
+        <i [class]="'icon-' + social.icon"></i>
+      </a>
+    </div>
+  </div>
+</nav>

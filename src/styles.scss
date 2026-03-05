@@ -1,0 +1,25 @@
+/* Global Styles */
+@import './styles/variables.scss';
+@import './styles/global.scss';
+
+/* Icons - Simple SVG-based icon support */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* Custom Icon Classes */
+.icon-github::before {
+  content: '🐙';
+}
+
+.icon-linkedin::before {
+  content: '💼';
+}
+
+.icon-external::before {
+  content: '↗️';
+}
+
+.icon-github::after,
+.icon-linkedin::after,
+.icon-external::after {
+  display: none;
+}

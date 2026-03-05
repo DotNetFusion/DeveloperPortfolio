@@ -1,0 +1,28 @@
+<section id="certifications" class="certifications section">
+  <div class="container">
+    <h2 class="section-title">Certifications & Achievements</h2>
+
+    <div class="certifications-grid">
+      <div *ngFor="let cert of certifications(); let i = index" class="cert-card" [style.animation-delay]="i * 100 + 'ms'">
+        <div class="cert-badge">
+          <span>{{ getCertIcon(cert.issuer) }}</span>
+        </div>
+
+        <div class="cert-content">
+          <h3>{{ cert.title }}</h3>
+          <p class="cert-issuer">{{ cert.issuer }}</p>
+          <p *ngIf="cert.date" class="cert-date">📅 {{ cert.date }}</p>
+        </div>
+
+        <div class="cert-badge-visual"></div>
+      </div>
+    </div>
+
+    <div class="certifications-footer">
+      <p>
+        Committed to continuous professional development and staying updated with the latest industry standards and
+        technologies.
+      </p>
+    </div>
+  </div>
+</section>

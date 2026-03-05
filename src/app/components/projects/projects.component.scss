@@ -1,0 +1,169 @@
+@import '../../../styles/variables.scss';
+
+.projects {
+  background: linear-gradient(135deg, rgba($color-primary, 0.05) 0%, rgba($color-secondary, 0.05) 100%);
+}
+
+.section-title {
+  margin-bottom: $spacing-3xl;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: $spacing-2xl;
+  margin-bottom: $spacing-3xl;
+
+  @include responsive('md') {
+    grid-template-columns: 1fr;
+  }
+
+  @include responsive('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  background: $color-bg-secondary;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  @include smooth-transition(all);
+  animation: slideUp $transition-base ease-out;
+
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: $shadow-xl, $shadow-glow;
+    transform: translateY(-8px);
+
+    .project-header {
+      background: rgba($color-primary, 0.1);
+    }
+  }
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-lg;
+  background: rgba($color-primary, 0.05);
+  border-bottom: 1px solid $color-border;
+  @include smooth-transition(background);
+}
+
+.project-icon {
+  width: 40px;
+  height: 40px;
+  @include flex-center;
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+}
+
+.project-links {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  background: $color-primary;
+  color: $color-bg-primary;
+  border-radius: $radius-md;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  @include smooth-transition(all);
+  text-decoration: none;
+
+  &:hover {
+    background: $color-primary-dark;
+    transform: scale(1.05);
+  }
+
+  i {
+    font-size: $font-size-base;
+  }
+
+  span {
+    @include responsive('md') {
+      display: none;
+    }
+  }
+}
+
+.project-content {
+  flex: 1;
+  padding: $spacing-lg;
+  @include flex-column;
+  gap: $spacing-md;
+
+  h3 {
+    font-size: $font-size-xl;
+    color: $color-text-primary;
+    margin: 0;
+
+    @include responsive('md') {
+      font-size: $font-size-lg;
+    }
+  }
+
+  p {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    margin: 0;
+    line-height: $line-height-relaxed;
+  }
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.tech-badge {
+  display: inline-block;
+  padding: $spacing-xs $spacing-md;
+  background: rgba($color-primary, 0.15);
+  color: $color-primary;
+  border-radius: $radius-full;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  border: 1px solid rgba($color-primary, 0.3);
+}
+
+.project-footer {
+  padding: $spacing-lg;
+  border-top: 1px solid $color-border;
+  display: flex;
+  gap: $spacing-md;
+
+  .btn {
+    flex: 1;
+  }
+}
+
+.projects-cta {
+  text-align: center;
+  padding: $spacing-3xl;
+  background: rgba($color-primary, 0.05);
+  border: 2px dashed $color-border;
+  border-radius: $radius-xl;
+  @include flex-column;
+  gap: $spacing-lg;
+  align-items: center;
+
+  p {
+    font-size: $font-size-lg;
+    margin: 0;
+  }
+}

@@ -1,0 +1,39 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Sunkolu Shiva Kumar</h3>
+        <p>.NET Full Stack Developer | Angular | Azure</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <nav class="footer-nav">
+          <button *ngFor="let link of footerLinks" class="footer-link" (click)="scrollToSection(link.id)">
+            {{ link.label }}
+          </button>
+        </nav>
+      </div>
+
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <div class="footer-socials">
+          <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank" rel="noopener noreferrer" [title]="social.label" class="footer-social">
+            {{ social.icon }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ currentYear }} Sunkolu Shiva Kumar. All rights reserved.</p>
+      <p class="design-credit">
+        Designed & Built with
+        <span class="heart">❤️</span>
+        using Angular
+      </p>
+    </div>
+  </div>
+</footer>

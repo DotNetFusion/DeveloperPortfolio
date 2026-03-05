@@ -1,0 +1,48 @@
+<section id="about" class="about section">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p class="about-description">
+          {{ developer()?.summary }}
+        </p>
+
+        <div class="about-highlights">
+          <div *ngFor="let highlight of highlights" class="highlight-card">
+            <div class="highlight-icon">{{ highlight.icon }}</div>
+            <div class="highlight-content">
+              <h3>{{ highlight.label }}</h3>
+              <p>{{ highlight.value }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-cta">
+          <a
+            [href]="'https://www.linkedin.com/in/shivasunke/'"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary">
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

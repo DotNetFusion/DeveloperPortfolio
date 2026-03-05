@@ -1,0 +1,119 @@
+@import '../../../styles/variables.scss';
+
+.skills {
+  background: linear-gradient(135deg, rgba($color-primary, 0.05) 0%, rgba($color-secondary, 0.05) 100%);
+}
+
+.section-title {
+  margin-bottom: $spacing-3xl;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-2xl;
+  margin-bottom: $spacing-3xl;
+
+  @include responsive('md') {
+    grid-template-columns: 1fr;
+  }
+
+  @include responsive('lg') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skill-category {
+  background: $color-bg-secondary;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  padding: $spacing-2xl;
+  @include smooth-transition(all);
+  animation: slideUp $transition-base ease-out;
+
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: $shadow-lg, $shadow-glow;
+    transform: translateY(-4px);
+  }
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-lg;
+
+  h3 {
+    font-size: $font-size-xl;
+    color: $color-primary;
+    margin: 0;
+    white-space: nowrap;
+    font-weight: $font-weight-semibold;
+  }
+
+  .category-divider {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, $color-primary, transparent);
+  }
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.skill-badge {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-lg;
+  background: rgba($color-primary, 0.1);
+  border: 1px solid $color-border;
+  border-radius: $radius-full;
+  @include smooth-transition(all);
+  cursor: default;
+
+  &:hover {
+    background: rgba($color-primary, 0.2);
+    border-color: $color-primary;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($color-primary, 0.2);
+  }
+
+  .skill-icon {
+    font-size: $font-size-lg;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .skill-name {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-secondary;
+
+    @include responsive('md') {
+      font-size: $font-size-xs;
+    }
+  }
+}
+
+.skills-footer {
+  text-align: center;
+  padding: $spacing-2xl;
+  background: rgba($color-primary, 0.05);
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+
+  p {
+    font-size: $font-size-base;
+    color: $color-text-secondary;
+    margin: 0;
+
+    @include responsive('md') {
+      font-size: $font-size-sm;
+    }
+  }
+}

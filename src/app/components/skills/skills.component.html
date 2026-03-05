@@ -1,0 +1,28 @@
+<section id="skills" class="skills section">
+  <div class="container">
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="skills-grid">
+      <div *ngFor="let skillGroup of skills()" class="skill-category">
+        <div class="category-header">
+          <h3>{{ skillGroup.category }}</h3>
+          <div class="category-divider"></div>
+        </div>
+
+        <div class="skills-list">
+          <div *ngFor="let skill of skillGroup.skills" class="skill-badge">
+            <span class="skill-icon">{{ getSkillIcon(skill) }}</span>
+            <span class="skill-name">{{ skill }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-footer">
+      <p>
+        Continuously learning and adapting to emerging technologies. Proficient in building scalable,
+        maintainable, and performant applications.
+      </p>
+    </div>
+  </div>
+</section>

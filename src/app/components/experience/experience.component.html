@@ -1,0 +1,38 @@
+<section id="experience" class="experience section">
+  <div class="container">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="experience-timeline">
+      <div *ngFor="let job of experience(); let i = index; let last = last" class="timeline-item" [class.active]="job.current" [style.animation-delay]="i * 100 + 'ms'">
+        <div class="timeline-marker">
+          <div class="marker-dot" [class.active]="job.current"></div>
+          <div *ngIf="!last" class="marker-line"></div>
+        </div>
+
+        <div class="timeline-content">
+          <div class="job-header">
+            <div class="job-info">
+              <h3>{{ job.position }}</h3>
+              <p class="job-company">{{ job.company }}</p>
+              <p class="job-location">📍 {{ job.location }}</p>
+            </div>
+            <div class="job-dates">
+              <span class="date-badge">{{ job.startDate }}</span>
+              <span class="date-divider">→</span>
+              <span class="date-badge" [class.current]="job.current">
+                {{ job.current ? 'Present' : job.endDate }}
+              </span>
+            </div>
+          </div>
+
+          <ul class="job-responsibilities">
+            <li *ngFor="let responsibility of job.responsibilities">
+              <span class="responsibility-dot">•</span>
+              <span>{{ responsibility }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
